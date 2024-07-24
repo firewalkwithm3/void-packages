@@ -1,12 +1,12 @@
 # Template file for 'retrosmart-cursor-theme'
 pkgname=retrosmart-cursor-theme
-version=3.0
-revision=1
+version=3.1
+revision=2
 build_style="gnu-makefile"
 hostmakedepends="ImageMagick xcursorgen"
 short_desc="An old-fashioned look X11 cursor theme"
 maintainer="fern <mail@fern.garden>"
 license="GPL-3.0-only"
-homepage=https://git.fern.garden/fern/cursors-retrosmart
-distfiles="https://git.fern.garden/fern/cursors-retrosmart/archive/${version}.tar.gz"
-checksum=948b123986f19eb90ef53ac80ec7d5f1029e6ec0cdfad6fc247576602911c1cd
+homepage="https://github.com/mdomlop/retrosmart-x11-cursors"
+distfiles="https://github.com/mdomlop/retrosmart-x11-cursors/archive/refs/tags/${version}a.tar.gz"
+checksum="ee3e558868bf581ff328899060a99f8c68ac2d211e4539c0278ec43cf55ddb55"
