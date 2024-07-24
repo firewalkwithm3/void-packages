@@ -1,0 +1,21 @@
+# Template file for 'paradise-gtk-theme'
+pkgname=paradise-gtk-theme
+version=1.0.0
+revision=1
+hostmakedepends="sassc meson inkscape optipng nodejs bc"
+depends="gtk+3 gnome-themes-extra"
+short_desc="Material Design theme for GNOME/GTK based desktop environments using the paradise colourscheme"
+maintainer="fern <mail@fern.garden>"
+license="GPL-2.0-only"
+homepage=https://git.fern.garden/fern/gtk-paradise
+distfiles="https://git.fern.garden/fern/gtk-paradise/archive/${version}.tar.gz"
+checksum=1371bb88b25015574a27da19fc5684ffdb20a5b9f081bd062cd933ea4f6b2cc3
+
+do_build() {
+	./change_color.sh -t ${wrksrc}/build -o paradise <(echo -e "BG=151515\nFG=e8e3e3\nMATERIA_VIEW=151515\nMATERIA_SURFACE=1f1f1f\nHDR_BG=151515\nHDR_FG=e8e3e3\nSEL_BG=8c977d\n")
+}
+
+do_install() {
+	vmkdir usr/share/themes
+	vcopy ${wrksrc}/build/paradise usr/share/themes
+}

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=feishin
+Exec=feishin
+Terminal=false
+Type=Application
+Icon=feishin
+StartupWMClass=feishin
+Comment=A modern self-hosted music player.
+Categories=Audio;

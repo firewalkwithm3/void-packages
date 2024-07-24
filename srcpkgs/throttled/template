@@ -1,0 +1,23 @@
+# Template file for 'throttled'
+pkgname=throttled
+version=0.10.0
+revision=1
+depends="python3-dbus python3-gobject"
+short_desc="Workaround for Intel throttling issues in Linux"
+maintainer="fern <mail@fern.garden>"
+license="MIT"
+homepage="https://github.com/erpalma/throttled"
+distfiles="https://github.com/erpalma/throttled/archive/refs/tags/v${version}.tar.gz"
+checksum="49e042fc26a809b0e4f129598c8f12377809a43f6be5792a50a0b765a6cb69b8"
+
+do_install() {
+	vmkdir opt/throttled
+	vcopy mmio.py opt/throttled
+	vcopy throttled.py opt/throttled
+
+	vconf etc/throttled.conf
+
+	vsv throttled
+
+	vlicense LICENSE
+}

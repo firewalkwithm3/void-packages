@@ -1,0 +1,18 @@
+# Template file for 'gtklock-userinfo-module'
+pkgname=gtklock-userinfo-module
+version=3.0.0
+revision=1
+build_style="gnu-makefile"
+hostmakedepends="pkg-config"
+makedepends="gtk+3-devel accountsservice-devel"
+depends="gtklock"
+short_desc="gtklock module adding power controls to the lockscreen"
+maintainer="fern <mail@fern.garden>"
+license="GPL-3.0-only"
+homepage=https://github.com/jovanlanik/gtklock-userinfo-module
+distfiles="https://github.com/jovanlanik/gtklock-userinfo-module/archive/refs/tags/v${version}.tar.gz"
+checksum="51c21cf90a5c830e8ba095e02734d2da512609ed47bc377abf45f100a9571fd1"
+
+do_build() {
+	make
+}
