@@ -1,13 +1,13 @@
 # Template file for 'feishin-bin'
 pkgname=feishin-bin
-version=0.7.1
+version=0.7.3
 revision=1
 short_desc="A modern self-hosted music player"
 maintainer="fern <mail@fern.garden>"
 license="GPL-3.0-only"
 homepage=https://github.com/jeffvli/feishin
-distfiles="https://github.com/jeffvli/feishin/releases/download/v0.7.1/Feishin-${version}-linux-x64.tar.xz"
-checksum="e5274bc638bede1060c4555f0076f7ca131ca3e032c88a61403f246e85f0c7d7"
+distfiles="https://github.com/jeffvli/feishin/releases/download/v${version}/Feishin-${version}-linux-x64.tar.xz"
+checksum="323b52f68e126b4681fd651b8a6a220d1cd6cde621df3c56f5cf32b3b5231b58"
 
 do_install() {
 	vmkdir usr/lib/feishin
