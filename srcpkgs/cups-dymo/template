@@ -1,0 +1,29 @@
+# Template file for 'cups-dymo'
+pkgname=cups-dymo
+version=1.5.0
+revision=1
+hostmakedepends="git automake"
+makedepends="cups-devel boost-devel"
+short_desc="Drivers for Dymo label printers"
+maintainer="Fern Garden <mail@fern.garden>"
+license="GPL-2.0-only"
+homepage="https://github.com/dymosoftware/Drivers"
+
+do_fetch() {
+  git clone https://github.com/dymosoftware/Drivers $wrksrc
+  cd $wrksrc
+  git reset --hard 54a1c062b7c17afc9b4ef1be5064e998c677d2df
+}
+
+do_build() {
+  cd $wrksrc/LW5xx_Linux
+  aclocal
+  automake
+  sh configure
+  make
+}
+
+do_install() {
+  cd $wrksrc/LW5xx_Linux
+  make DESTDIR=$DESTDIR install
+}
